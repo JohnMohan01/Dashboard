@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="analytics">
+<body>
+  <div class="sidebar">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="usermanagement.html">User Management</a>
+    <a href="analytics.html" class="active">Analytics</a>
+  </div>
+  <div class="container">
+    <h1>Analytics</h1>
+    <canvas id="userChart"></canvas>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('userChart').getContext('2d');
+    const userChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Admin', 'Editor', 'Viewer'],
+        datasets: [{
+          label: 'User Distribution',
+          data: [3, 5, 2],
+          backgroundColor: ['#007bff', '#28a745', '#ffc107'],
+        }],
+      },
+    });
+  </script>
+</body>
+</html>
